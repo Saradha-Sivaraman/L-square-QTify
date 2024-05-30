@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .showAll {
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+  .cardswrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+  }

@@ -1,0 +1,9 @@
+.leftCarousel {
+    position: absolute;
+    cursor: pointer;
+    top: 40%;
+    left: 0;
+    z-index: 10;
+    transform: "translateY(-50%)";
+}
+  

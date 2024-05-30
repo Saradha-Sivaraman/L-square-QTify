@@ -1,0 +1,36 @@
+.wrapper {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+.faqtitle {
+color: var(--color-white);
+text-align: center;
+}
+.accordion {
+background-color: var(--color-black);
+padding: 20px;
+}
+.accordionwrapper {
+background-color: var(--color-black);
+border: 1px solid var(--color-white);
+color: var(--color-white);
+border-radius: 10px;
+height: 78px;
+margin: 0 132px;
+overflow: hidden;
+}
+.answers {
+background-color: var(--color-white);
+color: var(--color-black);
+margin: 0 132px;
+height: 81px;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+padding: 20px;
+overflow: hidden;
+}
+.expandicon {
+color: var(--color-primary);
+width: 40px;
+height: 40px;
+}

@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { fetchTopSongs, fetchNewSongs, fetchSongs } from "./api/api";
+import Navbar from "./components/Navbar/Navbar";
+import "./index.css";
+import { Outlet } from "react-router-dom";
 
-function App() {
+import { StyledEngineProvider } from "@mui/material/styles";
+import FAQAccordion from "./components/FAQAccordion/FAQAccordion";
+import { useEffect, useState } from "react";
+
+export default function App() {
+  const [data, setData] = useState({});
+
+  const getData = (key, source) => {
+    source().then((data) => {
+      setData((prevState) => {
+        return { ...prevState, [key]: data };
+      });
+    });
+  };
+  useEffect(() => {
+    getData("topAlbums", fetchTopSongs);
+    getData("newAlbums", fetchNewSongs);
+    getData("songs", fetchSongs);
+  });
+  const { topAlbums = [], newAlbums = [], songs = [] } = data;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <StyledEngineProvider injectFirst>
+          <Navbar searchAlbums={[...topAlbums, ...newAlbums]} />
+          <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
+          <FAQAccordion />
+        </StyledEngineProvider>
+      </>
     </div>
   );
 }
-
-export default App;

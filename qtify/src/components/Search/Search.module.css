@@ -1,0 +1,48 @@
+.wrapper {
+  align-items: stretch;
+  display: flex;
+  height: 48px;
+  max-width: 568px;
+}
+
+.searchbar {
+  border: 1px solid var(--color-black);
+  border-radius: 8px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  height: 100%;
+  padding: 14px 20px;
+  width: 502px;
+}
+
+.searchButton {
+  border: 1px solid var(--color-black);
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  height: 100%;
+  padding: 14px 20px;
+}
+
+.listItem {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.artistsname {
+  font-size: 12px;
+}
+.albumtitle {
+  font-size: 16px;
+}
+.imagewrapper {
+  width: 66px;
+  height: 71px;
+  border: 5px solid var(--color-black);
+  border-radius: 10px;
+}
+.imgcontainer {
+  display: flex;
+  align-items: flex-start;
+}
